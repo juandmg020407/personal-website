@@ -3,6 +3,7 @@ import { Fraunces, IBM_Plex_Mono, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { Toolbar } from "@/components/notebook/Toolbar";
 import { site } from "@/content/site";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -25,10 +26,6 @@ const plexMono = IBM_Plex_Mono({
   style: ["normal", "italic"],
   display: "swap",
 });
-
-const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
