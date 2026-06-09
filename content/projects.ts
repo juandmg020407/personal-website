@@ -1,0 +1,82 @@
+export type ProjectStatus = "live" | "wip" | "private";
+export type ProjectGlyphId = "route" | "montecarlo" | "xray" | "emdi" | "ballot";
+
+export type Project = {
+  slug: string;
+  name: string;
+  year: string;
+  oneLiner: string;
+  description?: string;
+  stack: string[];
+  /** Omit while the repository is private; add it the day it goes public. */
+  repoUrl?: string;
+  liveUrl?: string;
+  award?: string;
+  team?: string;
+  status: ProjectStatus;
+  statusNote?: string;
+  glyph: ProjectGlyphId;
+};
+
+export const featured: Project = {
+  slug: "openroute",
+  name: "OpenRoute",
+  year: "2026",
+  award: "3rd place — Responsible & Open AI in Industry Challenge (SEDIA)",
+  team: "EvolveAI",
+  oneLiner: "Open-source AI route planning for small logistics teams.",
+  description:
+    "Upload your delivery orders and OpenRoute handles the rest: geocoding, clustering, multi-vehicle route planning — with a local LLM that explains every decision in plain language. Built to cut kilometres, hours and cost for SMEs that can't afford enterprise routing software.",
+  stack: ["Next.js", "TypeScript", "Ollama · llama3.1", "OSRM", "Leaflet", "Python"],
+  repoUrl: "https://github.com/ComunidadIA-OS/OpenRoute",
+  status: "live",
+  glyph: "route",
+};
+
+export const projects: Project[] = [
+  {
+    slug: "montecast",
+    name: "Montecast",
+    year: "2026",
+    oneLiner:
+      "A World Cup 2026 forecast engine — Dixon-Coles × Elo fitted on 150 years of football, 50,000 Monte Carlo tournaments.",
+    stack: ["Python", "NumPy", "Next.js", "TypeScript"],
+    repoUrl: "https://github.com/juandmg020407/montecast",
+    status: "wip",
+    statusNote: "web deploy in progress",
+    glyph: "montecarlo",
+  },
+  {
+    slug: "xray-deid",
+    name: "X-ray De-identification",
+    year: "2026",
+    oneLiner:
+      "Finds and erases patient data burned into radiographs: YOLO detection, anonymisation, then automatic leak verification.",
+    stack: ["Python", "YOLO", "OpenCV", "Gradio"],
+    status: "private",
+    statusNote: "Treelogic challenge · IA Biomed hackathon — code on request",
+    glyph: "xray",
+  },
+  {
+    slug: "evolveai-emdi",
+    name: "EvolveAI · EMDI",
+    year: "2026",
+    oneLiner:
+      "Team EvolveAI's responsible-AI initiative, presented at the 2026 Responsible & Open AI in Industry Challenge.",
+    stack: ["Python", "HTML", "Rust", "Docker"],
+    repoUrl: "https://github.com/ComunidadIA-OS/evolveai-emdi",
+    status: "live",
+    glyph: "emdi",
+  },
+  {
+    slug: "concurso-umh",
+    name: "Concurso Gastronómico UMH",
+    year: "2026",
+    oneLiner:
+      "Real-time voting for a university gastronomy contest: country management, live ballots and a results dashboard.",
+    stack: ["JavaScript", "Python", "Vercel"],
+    repoUrl: "https://github.com/juandmg020407/Concurso-Gastronomico-UMH-2025-2",
+    status: "live",
+    glyph: "ballot",
+  },
+];
