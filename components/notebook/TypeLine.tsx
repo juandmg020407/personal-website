@@ -23,7 +23,6 @@ export function TypeLine({
 
     let i = 0;
     let timer: number;
-    setShown("");
 
     const tick = () => {
       i += 1;
@@ -32,8 +31,13 @@ export function TypeLine({
       if (i < text.length) timer = window.setTimeout(tick, speed);
     };
 
+    // async reset keeps React happy and is invisible (fires next frame)
+    const reset = window.setTimeout(() => setShown(""), 0);
     timer = window.setTimeout(tick, startDelay);
-    return () => window.clearTimeout(timer);
+    return () => {
+      window.clearTimeout(reset);
+      window.clearTimeout(timer);
+    };
   }, [text, speed, startDelay]);
 
   return (

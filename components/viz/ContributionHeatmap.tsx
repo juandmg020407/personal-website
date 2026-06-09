@@ -34,7 +34,7 @@ export function ContributionHeatmap({ days }: { days: ContributionDay[] }) {
 
   return (
     <div className="overflow-x-auto">
-      <div className="inline-flex flex-col gap-1.5">
+      <div className="inline-flex flex-col gap-1.5 pr-8">
         <div className="flex gap-[3px] pl-[26px] font-mono text-[10px] leading-none text-ink-soft">
           {monthLabels.map((label, i) => (
             <span key={i} className="w-[11px] overflow-visible whitespace-nowrap">
