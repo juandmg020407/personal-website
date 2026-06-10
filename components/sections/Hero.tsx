@@ -29,6 +29,10 @@ export function Hero() {
               tools.
             </p>
 
+            <p className="mt-6 font-display text-[clamp(19px,2.4vw,25px)] font-medium italic leading-snug text-pen">
+              {site.motto}
+            </p>
+
             <dl className="mt-8 grid grid-cols-[58px_1fr] gap-x-5 gap-y-0.5 font-mono text-[13.5px] leading-7">
               <dt className="text-ink-soft">state</dt>
               <dd className="text-moss">{site.status.state}</dd>

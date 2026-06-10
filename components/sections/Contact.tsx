@@ -56,8 +56,8 @@ export function Contact() {
       </div>
 
       <p className="mt-8 max-w-[52ch] font-serif text-[19px] leading-relaxed">
-        Building something interesting, hiring an intern, or just want to argue
-        about football models?{" "}
+        Building something interesting, hiring an intern, or just want to swap
+        big ideas?{" "}
         <a className="lnk" href={`mailto:${site.email}`}>
           Say hi
         </a>{" "}

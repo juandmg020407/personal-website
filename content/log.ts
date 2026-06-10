@@ -32,7 +32,6 @@ export const log: LogEntry[] = [
     date: "2026-06-01",
     tag: "ship",
     text: "EMDI responsible-AI initiative submitted with team EvolveAI",
-    href: "https://github.com/ComunidadIA-OS/evolveai-emdi",
   },
   {
     date: "2026-05-27",

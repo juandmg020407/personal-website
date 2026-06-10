@@ -4,6 +4,7 @@ export const site = {
   handle: "juandmg020407",
   filename: "david_morales.ipynb",
   role: "Data Science & AI student",
+  motto: "If you can imagine it, you can create it.",
   location: "Spain",
   email: "juandmg020407@gmail.com",
   github: "https://github.com/juandmg020407",

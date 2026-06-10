@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Mono, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { CursorWash } from "@/components/fx/CursorWash";
 import { Toolbar } from "@/components/notebook/Toolbar";
 import { site } from "@/content/site";
 import { siteUrl } from "@/lib/site-url";
@@ -93,6 +94,7 @@ export default function RootLayout({
         />
         <Toolbar />
         {children}
+        <CursorWash />
         <Analytics />
       </body>
     </html>

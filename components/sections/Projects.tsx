@@ -5,6 +5,7 @@ import { projects, type Project } from "@/content/projects";
 const statusStyle: Record<Project["status"], string> = {
   live: "border-moss/40 text-moss",
   wip: "border-pen/40 text-pen",
+  hackathon: "border-verm/40 text-verm",
   private: "border-rule border-dashed text-ink-soft",
 };
 
@@ -44,7 +45,7 @@ function ProjectCard({ project }: { project: Project }) {
           {linked ? (
             <span className="text-pen">view source ↗</span>
           ) : (
-            <span title={project.statusNote}>code on request</span>
+            <span title={project.statusNote}>code coming soon</span>
           )}
         </div>
       </div>

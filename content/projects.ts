@@ -1,5 +1,5 @@
-export type ProjectStatus = "live" | "wip" | "private";
-export type ProjectGlyphId = "route" | "montecarlo" | "xray" | "emdi" | "ballot";
+export type ProjectStatus = "live" | "wip" | "hackathon" | "private";
+export type ProjectGlyphId = "route" | "montecarlo" | "xray" | "idonia" | "ballot";
 
 export type Project = {
   slug: string;
@@ -53,20 +53,20 @@ export const projects: Project[] = [
     oneLiner:
       "Finds and erases patient data burned into radiographs: YOLO detection, anonymisation, then automatic leak verification.",
     stack: ["Python", "YOLO", "OpenCV", "Gradio"],
-    status: "private",
-    statusNote: "Treelogic challenge · IA Biomed hackathon — code on request",
+    status: "hackathon",
+    statusNote: "Treelogic challenge · IA Biomed hackathon — code coming soon",
     glyph: "xray",
   },
   {
-    slug: "evolveai-emdi",
-    name: "EvolveAI · EMDI",
+    slug: "idonia-picos-de-europa",
+    name: "Idonia · Picos de Europa",
     year: "2026",
     oneLiner:
-      "Team EvolveAI's responsible-AI initiative, presented at the 2026 Responsible & Open AI in Industry Challenge.",
-    stack: ["Python", "HTML", "Rust", "Docker"],
-    repoUrl: "https://github.com/ComunidadIA-OS/evolveai-emdi",
-    status: "live",
-    glyph: "emdi",
+      "Medical-imaging flows built on Idonia's image-exchange platform — getting studies safely from machine to clinician to patient.",
+    stack: ["Python", "Idonia API", "Medical imaging"],
+    status: "hackathon",
+    statusNote: "Idonia challenge · IA Biomed hackathon — code coming soon",
+    glyph: "idonia",
   },
   {
     slug: "concurso-umh",

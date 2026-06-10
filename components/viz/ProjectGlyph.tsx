@@ -39,13 +39,14 @@ export function ProjectGlyph({ id }: { id: ProjectGlyphId }) {
         </>
       )}
 
-      {id === "emdi" && (
+      {id === "idonia" && (
         <>
-          <path d="M17 17l13-4M16 20l7 13M26 34l7-17" {...stroke} strokeWidth="1.4" />
-          <circle cx="14" cy="18" r="4.5" {...stroke} />
-          <circle cx="33" cy="12" r="4.5" {...stroke} />
-          <circle cx="25" cy="38" r="4.5" fill="var(--moss)" stroke="var(--ink)" strokeWidth="1.7" />
-          <path d="M40 38c2.5-2.5 2.5-6.5 0-9-2.5 2.5-2.5 6.5 0 9z" {...stroke} stroke="var(--moss)" />
+          {/* a medical image of the Picos de Europa, shared onwards */}
+          <rect x="5" y="9" width="28" height="26" rx="2" {...stroke} />
+          <path d="M8 31l6-8 4 5 5-7 6 10" {...stroke} />
+          <circle cx="26.5" cy="15.5" r="2.4" fill="var(--verm-bright)" />
+          <path d="M33 22h9" {...stroke} stroke="var(--pen)" />
+          <path d="M39 19l3 3-3 3" {...stroke} stroke="var(--pen)" />
         </>
       )}
 
