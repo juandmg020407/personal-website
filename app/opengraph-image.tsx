@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = "David Morales — Data Science & AI, building in public";
+export const alt = "David Morales — applied AI and data products, built in public";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -60,7 +60,7 @@ export default async function OpengraphImage() {
         </div>
 
         <div style={{ marginTop: 26, fontSize: 31, color: "#6e675a" }}>
-          Data Science &amp; AI — building in public
+          Applied AI &amp; data products — built in public
         </div>
 
         <div

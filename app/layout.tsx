@@ -45,7 +45,9 @@ export const metadata: Metadata = {
     "machine learning",
     "build in public",
     "OpenRoute",
-    "Montecast",
+    "FreeTicket hackathon",
+    "Colsubsidio 30X",
+    "Platanus Hack 26",
     "Spain",
   ],
   openGraph: {

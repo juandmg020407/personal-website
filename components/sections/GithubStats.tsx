@@ -55,8 +55,8 @@ export async function GithubStats() {
       <p className="mt-10 font-mono text-[11px] text-ink-soft">
         source:{" "}
         {data.source === "live"
-          ? "github api · refreshes daily"
-          : `github snapshot · ${data.fetchedAt}`}
+          ? `github live · checked ${data.fetchedAt}`
+          : `github snapshot · captured ${data.fetchedAt}`}
       </p>
     </Cell>
   );

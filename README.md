@@ -25,8 +25,8 @@ the kernel indicator in the toolbar even flicks to `busy` while they run.
 - Zero UI libraries — a hand-built design system (Fraunces, Source Serif 4,
   IBM Plex Mono on warm paper) and hand-drawn SVG illustrations instead of
   screenshots
-- GitHub data is fetched at build time and revalidated daily, with a
-  committed snapshot fallback so a rate limit can never break a deploy
+- GitHub data is requested from the public profile, with a dated committed
+  snapshot fallback so a rate limit can never break a deploy or imply stale data is live
 - Open Graph image generated from the same design tokens
   (`app/opengraph-image.tsx`)
 - Static output, semantic HTML, `prefers-reduced-motion` respected
