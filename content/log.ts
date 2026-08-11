@@ -13,25 +13,27 @@ export type LogEntry = {
  */
 export const log: LogEntry[] = [
   {
-    date: "2026-06-09",
+    date: "2026-08-04",
     tag: "ship",
-    text: "montecast web pushed — full Next.js front end for the forecast engine, bilingual EN/ES",
-    href: "https://github.com/juandmg020407/montecast",
+    text: "Platanus Hack 26 arcade build shipped — a two-player brick-breaker made for the Bogotá cabinet",
+    href: "https://github.com/juandmg020407/platanus-hack-26-colombia-arcade",
+  },
+  {
+    date: "2026-08-01",
+    tag: "ship",
+    text: "FreeTicket attendance forecaster shipped as a live dashboard and an installable agent skill",
+    href: "https://github.com/juandmg020407/Hackathon-Freeticket",
+  },
+  {
+    date: "2026-07-24",
+    tag: "ship",
+    text: "Colsubsidio × 30X prototype shipped — explainable, hyperpersonalised credit recommendations",
+    href: "https://github.com/juandmg020407/colsubsidio-credito-hiperpersonalizado",
   },
   {
     date: "2026-06-07",
     tag: "wip",
-    text: "x-ray de-identification: detection + anonymisation + leak checks working end to end; recording the demo video",
-  },
-  {
-    date: "2026-06-02",
-    tag: "wip",
-    text: "IA Biomed hackathon: building Picos de Europa — medical-imaging flows over Idonia APIs",
-  },
-  {
-    date: "2026-06-01",
-    tag: "ship",
-    text: "EMDI responsible-AI initiative submitted with team EvolveAI",
+    text: "x-ray de-identification: detection, anonymisation and leak checks working end to end",
   },
   {
     date: "2026-05-27",

@@ -29,7 +29,7 @@ export function FeaturedProject() {
               {p.name}
             </h2>
             <p className="mt-2 font-mono text-[12.5px] text-ink-soft">
-              with team {p.team} · {p.year}
+              {p.year}
             </p>
 
             <p className="mt-5 max-w-[52ch] font-serif text-[16.5px] leading-relaxed">
