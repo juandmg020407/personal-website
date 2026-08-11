@@ -10,9 +10,14 @@ const statusStyle: Record<Project["status"], string> = {
 };
 
 function ProjectCard({ project }: { project: Project }) {
-  const linked = Boolean(project.repoUrl);
-  const inner = (
-    <>
+  const linked = Boolean(project.repoUrl || project.liveUrl);
+
+  return (
+    <article
+      className={`group flex h-full flex-col gap-5 border border-ink/60 bg-paper p-6 transition-[box-shadow,transform,border-color] duration-300 ${
+        linked ? "hover:-translate-y-0.5 hover:border-ink hover:shadow-[7px_7px_0_var(--pen-wash)]" : ""
+      }`}
+    >
       <div className="flex items-start justify-between gap-3">
         <ProjectGlyph id={project.glyph} />
         <span
@@ -42,30 +47,34 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <div className="flex items-baseline justify-between gap-3 font-mono text-[12px] text-ink-soft">
           <span>{project.year}</span>
-          {linked ? (
-            <span className="text-pen">view source ↗</span>
-          ) : (
+          <span className="flex flex-wrap justify-end gap-x-3 gap-y-1">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lnk"
+              >
+                open live ↗
+              </a>
+            ) : null}
+            {project.repoUrl ? (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lnk"
+              >
+                view source ↗
+              </a>
+            ) : null}
+          </span>
+          {!linked ? (
             <span title={project.statusNote}>code coming soon</span>
-          )}
+          ) : null}
         </div>
       </div>
-    </>
-  );
-
-  const className =
-    "group flex h-full flex-col gap-5 border border-ink/60 bg-paper p-6 transition-[box-shadow,transform,border-color] duration-300";
-
-  if (!linked) return <div className={className}>{inner}</div>;
-
-  return (
-    <a
-      href={project.repoUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`${className} hover:-translate-y-0.5 hover:border-ink hover:shadow-[7px_7px_0_var(--pen-wash)]`}
-    >
-      {inner}
-    </a>
+    </article>
   );
 }
 

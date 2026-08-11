@@ -3,7 +3,7 @@ import { TypeLine } from "@/components/notebook/TypeLine";
 import { site } from "@/content/site";
 
 const chips = [
-  { href: "https://github.com/juandmg020407", label: "github ↗", external: true },
+  { href: site.github, label: "github ↗", external: true },
   { href: site.linkedin, label: "linkedin ↗", external: true },
   { href: `mailto:${site.email}`, label: site.email, external: false },
 ];
@@ -24,9 +24,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-7 max-w-[46ch] font-serif text-[clamp(18px,2vw,22px)] leading-[1.55]">
-              Data Science &amp; AI student in Spain. I build and ship in public —
-              AI route planners, World-Cup forecast engines, medical-imaging
-              tools.
+              {site.description}
             </p>
 
             <p className="mt-6 font-display text-[clamp(19px,2.4vw,25px)] font-medium italic leading-snug text-pen">

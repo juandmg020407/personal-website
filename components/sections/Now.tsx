@@ -4,14 +4,16 @@ import { site } from "@/content/site";
 const items = [
   <>Studying Data Science &amp; AI — the mathematics and the engineering, in equal measure.</>,
   <>
-    Turning <strong>Montecast</strong>, my World Cup 2026 forecast engine, into a public
-    product before the tournament kicks off.
+    Shipping applied data and AI products through hackathons — most recently
+    attendance forecasting, explainable credit recommendations and an arcade game.
   </>,
   <>
-    Preparing my application to <strong>Y&nbsp;Combinator&apos;s Startup School in Paris</strong> —
-    this site is part of it.
+    Interested in <strong>research collaborations</strong> and hard problems with good data.
   </>,
-  <>Open to internships, research collaborations and hard problems with good data.</>,
+  <>
+    <strong>Open to work opportunities</strong> with teams that value experimentation,
+    ownership and shipping.
+  </>,
 ];
 
 export function Now() {
