@@ -1,4 +1,5 @@
 import { Cell, Fn, Punct } from "@/components/notebook/Cell";
+import { ui, type Locale } from "@/content/i18n";
 import { site } from "@/content/site";
 
 function Row({
@@ -28,7 +29,9 @@ function Row({
   );
 }
 
-export function Contact() {
+export function Contact({ locale }: { locale: Locale }) {
+  const copy = ui[locale].contact;
+
   return (
     <Cell
       n={7}
@@ -56,12 +59,11 @@ export function Contact() {
       </div>
 
       <p className="mt-8 max-w-[52ch] font-serif text-[19px] leading-relaxed">
-        Building something interesting, looking for a hands-on data and AI builder,
-        or just want to swap big ideas?{" "}
+        {copy.intro}{" "}
         <a className="lnk" href={`mailto:${site.email}`}>
-          Say hi
+          {copy.action}
         </a>{" "}
-        — I read everything.
+        {copy.ending}
       </p>
     </Cell>
   );

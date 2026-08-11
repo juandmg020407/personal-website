@@ -10,6 +10,27 @@ const stroke = {
 
 /** One small ink drawing per project — no fake screenshots. */
 export function ProjectGlyph({ id }: { id: ProjectGlyphId }) {
+  if (id === "agent") {
+    return (
+      <span aria-hidden className="relative block size-11 shrink-0 border border-ink bg-paper-deep">
+        <span className="absolute left-1.5 top-1 font-display text-[22px] leading-none text-pen">✦</span>
+        <span className="absolute bottom-1 right-1.5 font-mono text-[13px] text-ink">→</span>
+        <span className="absolute bottom-2 left-1.5 size-1.5 rounded-full bg-verm-bright" />
+      </span>
+    );
+  }
+
+  if (id === "credit") {
+    return (
+      <span aria-hidden className="relative block size-11 shrink-0">
+        <span className="absolute inset-x-1 top-1 h-3 border border-ink bg-paper-deep" />
+        <span className="absolute inset-x-1 top-[18px] h-3 border border-ink bg-paper-deep" />
+        <span className="absolute inset-x-1 top-[32px] h-3 border border-pen bg-pen-wash" />
+        <span className="absolute right-2 top-[34px] font-mono text-[9px] text-pen">01</span>
+      </span>
+    );
+  }
+
   return (
     <svg viewBox="0 0 48 48" aria-hidden className="size-11 shrink-0">
       {id === "montecarlo" && (

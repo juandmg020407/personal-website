@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     default: "David Morales — Data Science & AI, building in public",
     template: "%s · David Morales",
   },
-  description: site.description,
+  description: site.description.en,
   authors: [{ name: site.fullName, url: site.github }],
   creator: site.fullName,
   keywords: [
@@ -47,7 +47,10 @@ export const metadata: Metadata = {
     "OpenRoute",
     "FreeTicket hackathon",
     "Colsubsidio 30X",
-    "Platanus Hack 26",
+    "Chispy",
+    "Platanus Build Night",
+    "IDONIA",
+    "medical imaging",
     "Spain",
   ],
   openGraph: {
@@ -55,16 +58,19 @@ export const metadata: Metadata = {
     url: "/",
     siteName: site.filename,
     title: "David Morales — Data Science & AI, building in public",
-    description: site.description,
+    description: site.description.en,
     locale: "en",
   },
   twitter: {
     card: "summary_large_image",
     title: "David Morales — Data Science & AI, building in public",
-    description: site.description,
+    description: site.description.en,
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: { en: "/", es: "/es" },
+  },
 };
 
 const personJsonLd = {
@@ -74,7 +80,7 @@ const personJsonLd = {
   alternateName: site.fullName,
   email: `mailto:${site.email}`,
   url: siteUrl,
-  jobTitle: site.role,
+  jobTitle: site.role.en,
   address: { "@type": "PostalAddress", addressCountry: "ES" },
   sameAs: [site.github, site.linkedin],
 };

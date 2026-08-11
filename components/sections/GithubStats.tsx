@@ -1,17 +1,19 @@
 import { Cell, Fn, Punct, Str } from "@/components/notebook/Cell";
 import { ContributionHeatmap } from "@/components/viz/ContributionHeatmap";
 import { LangBars } from "@/components/viz/LangBars";
+import { ui, type Locale } from "@/content/i18n";
 import { site } from "@/content/site";
 import { getGithubData } from "@/lib/github";
 
-export async function GithubStats() {
+export async function GithubStats({ locale }: { locale: Locale }) {
   const data = await getGithubData();
+  const copy = ui[locale].github;
 
   const counters = [
-    { value: data.totalContributions, label: "contributions · last 12 mo" },
-    { value: site.stats.projectsShipped, label: "projects shipped" },
-    { value: site.stats.hackathons, label: "hackathons" },
-    { value: site.stats.podiums, label: "podium finish" },
+    { value: data.totalContributions, label: copy.contributions },
+    { value: site.stats.projectsShipped, label: copy.projects },
+    { value: site.stats.hackathons, label: copy.hackathons },
+    { value: site.stats.podiums, label: copy.podiums },
   ];
 
   return (
@@ -42,21 +44,20 @@ export async function GithubStats() {
       <div className="mt-14 grid gap-12 lg:grid-cols-[auto_minmax(260px,1fr)] lg:gap-16">
         <div>
           <p className="mb-4 font-mono text-[12px] text-ink-soft">
-            # commit activity — last 6 months
+            {copy.activity}
           </p>
           <ContributionHeatmap days={data.days} />
         </div>
         <div>
-          <p className="mb-4 font-mono text-[12px] text-ink-soft"># language mix, by bytes shipped</p>
+          <p className="mb-4 font-mono text-[12px] text-ink-soft">{copy.languages}</p>
           <LangBars languages={data.languages} />
         </div>
       </div>
 
       <p className="mt-10 font-mono text-[11px] text-ink-soft">
-        source:{" "}
         {data.source === "live"
-          ? `github live · checked ${data.fetchedAt}`
-          : `github snapshot · captured ${data.fetchedAt}`}
+          ? `${copy.live} ${data.fetchedAt}`
+          : `${copy.snapshot} ${data.fetchedAt}`}
       </p>
     </Cell>
   );

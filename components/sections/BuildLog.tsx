@@ -1,4 +1,5 @@
 import { Cell, Fn, Num, Punct } from "@/components/notebook/Cell";
+import { ui, type Locale } from "@/content/i18n";
 import { log, type LogTag } from "@/content/log";
 import { site } from "@/content/site";
 
@@ -9,7 +10,9 @@ const tagStyle: Record<LogTag, string> = {
   note: "text-ink-soft",
 };
 
-export function BuildLog() {
+export function BuildLog({ locale }: { locale: Locale }) {
+  const copy = ui[locale].log;
+
   return (
     <Cell
       n={4}
@@ -28,7 +31,7 @@ export function BuildLog() {
           const body = (
             <>
               {entry.tag === "award" && "▲ "}
-              {entry.text}
+              {entry.text[locale]}
             </>
           );
           return (
@@ -39,7 +42,9 @@ export function BuildLog() {
               <time dateTime={entry.date} className="mr-4 text-ink-soft sm:mr-0">
                 {entry.date}
               </time>
-              <span className={`mr-4 sm:mr-0 ${tagStyle[entry.tag]}`}>[{entry.tag}]</span>
+              <span className={`mr-4 sm:mr-0 ${tagStyle[entry.tag]}`}>
+                [{copy.tags[entry.tag]}]
+              </span>
               {entry.href ? (
                 <a
                   href={entry.href}
@@ -58,7 +63,7 @@ export function BuildLog() {
       </ol>
 
       <p className="mt-7 font-mono text-[12.5px] text-ink-soft">
-        ─── stream continues on{" "}
+        {copy.continues}{" "}
         <a className="lnk" href={site.github} target="_blank" rel="noopener noreferrer">
           github ↗
         </a>
